@@ -1,1 +1,2 @@
+com\ecommerce\backend\controller\OrderController$StatusUpdateRequest.class
 com\ecommerce\backend\dto\StockMovementResponse.class

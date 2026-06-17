@@ -81,9 +81,24 @@ public class OrderService {
         return orderRepository.findAllByOrderByOrderDateDesc();
     }
 
+    @Transactional
     public Order updateOrderStatus(Long orderId, OrderStatus status) {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found"));
+        
+        // If canceling and wasn't canceled before, restore stock
+        if (status == OrderStatus.CANCELLED && order.getStatus() != OrderStatus.CANCELLED) {
+            for (OrderItem item : order.getItems()) {
+                Product product = item.getProduct();
+                // Restore the quantity that was deducted (or all if none was available before)
+                Integer stock = stockService.getTotalStock(product.getId());
+                if (stock != null && stock >= 0) {
+                    BigDecimal purchasePrice = product.getPurchasePriceHT() != null ? product.getPurchasePriceHT() : BigDecimal.ZERO;
+                    stockService.registerInboundMovement(product, "RESTORE-" + orderId, item.getQuantity(), purchasePrice, null, "Order canceled");
+                }
+            }
+        }
+        
         order.setStatus(status);
         return orderRepository.save(order);
     }

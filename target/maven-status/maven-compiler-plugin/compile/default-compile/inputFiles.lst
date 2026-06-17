@@ -1,9 +1,11 @@
 D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\service\OrderService.java
 D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\enums\MovementType.java
 D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\dto\ProductStockStats.java
+D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\enums\OrderStatus.java
 D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\repository\StockBatchRepository.java
 D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\security\AuthService.java
 D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\controller\ProductController.java
+D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\dto\CheckoutRequest.java
 D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\dto\ProductRequest.java
 D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\dto\StockInboundRequest.java
 D:\ecommerce2\backend\src\main\java\com\ecommerce\backend\controller\OrderController.java
