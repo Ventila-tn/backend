@@ -1,2 +1,8 @@
 com\ecommerce\backend\controller\OrderController$StatusUpdateRequest.class
+com\ecommerce\backend\dto\LogEntryRequest.class
 com\ecommerce\backend\dto\StockMovementResponse.class
+com\ecommerce\backend\repository\LogEntryRepository.class
+com\ecommerce\backend\service\LogService.class
+com\ecommerce\backend\dto\LogEntryDTO.class
+com\ecommerce\backend\entity\LogEntry.class
+com\ecommerce\backend\controller\LogController.class

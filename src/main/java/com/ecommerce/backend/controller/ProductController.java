@@ -29,7 +29,7 @@ public class ProductController {
 
     @GetMapping
     public List<ProductDTO> getAllProducts() {
-        return productRepository.findAll().stream()
+        return productRepository.findAllByActiveTrue().stream()
                 .map(this::mapToDTO)
                 .collect(Collectors.toList());
     }
